@@ -1,0 +1,3047 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>A propos de la base des données &#8212; My  book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Projet_prediction_pluie';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Visualisation des données avec Python en utilisant la bibliothèque, pandas, numpy et Matplotlib" href="VISUALISATION_MATPLOLIB.html" />
+    <link rel="prev" title="🎯 Bienvenue dans l’univers des données par Aimé ADJEGUEDE 🎯" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My  book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My  book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    🎯 Bienvenue dans l’univers des données par Aimé ADJEGUEDE 🎯
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">A propos de la base des données</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="VISUALISATION_MATPLOLIB.html"><strong>Visualisation des données avec Python en utilisant la bibliothèque, pandas, numpy et Matplotlib</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="WEB_SCRAPING_API_PYTHON.html">API ET COLLECTE DE DONNES AVEC PYTHON</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FProjet_prediction_pluie.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Projet_prediction_pluie.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>A propos de la base des données</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">A propos de la base des données</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#importation-des-mibrairies-necessaires">Importation des mibrairies nécessaires</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pretraitement-des-donnees">Prétraitement des données</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#donnees-d-entrainement-et-de-test">Données d’entrainement et de test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-regression-lineaire">La régression linéaire</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-utiliser-la-fonction-train-test-split-pour-diviser-le-features-et-y-dataframes-avectest-size-de-0-2-et-le-random-state-egale-a-10"><strong>Q1) Utiliser la fonction <code class="docutils literal notranslate"><span class="pre">train_test_split</span></code> pour diviser le <code class="docutils literal notranslate"><span class="pre">features</span></code> et <code class="docutils literal notranslate"><span class="pre">Y</span></code> dataframes avec<code class="docutils literal notranslate"><span class="pre">test_size</span></code> de <code class="docutils literal notranslate"><span class="pre">0.2</span></code> et le <code class="docutils literal notranslate"><span class="pre">random_state</span></code> égale <strong>à</strong> <code class="docutils literal notranslate"><span class="pre">10</span></code>.</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-creez-et-entrainez-un-modele-de-regression-lineaire-appele-linearreg-a-l-aide-des-donnees-d-entrainement-x-train-y-train"><strong>Q2) Créez et entraînez un modèle de régression linéaire appelé LinearReg à l’aide des données d’entraînement (<code class="docutils literal notranslate"><span class="pre">x_train</span></code>, <code class="docutils literal notranslate"><span class="pre">y_train</span></code>).</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q3-utilisez-maintenant-la-methode-predict-sur-les-donnees-de-test-x-test-et-enregistrez-la-dans-le-tableau-predictions"><strong>Q3) Utilisez maintenant la méthode <code class="docutils literal notranslate"><span class="pre">predict</span></code> sur les données de test (<code class="docutils literal notranslate"><span class="pre">x_test</span></code>) et enregistrez-la dans le tableau <code class="docutils literal notranslate"><span class="pre">predictions</span></code>.</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q4-a-l-aide-des-predictions-et-de-la-trame-de-donnees-y-test-calculez-la-valeur-de-chaque-metrique-a-l-aide-de-la-fonction-appropriee"><strong>Q4) À l’aide des « prédictions » et de la trame de données « y_test », calculez la valeur de chaque métrique à l’aide de la fonction appropriée.</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q5-affichez-le-mae-le-mse-et-le-r2-dans-un-format-tabulaire-en-utilisant-le-bloc-de-donnees-pour-le-modele-lineaire"><strong>Q5) Affichez le MAE, le MSE et le R2 dans un format tabulaire en utilisant le bloc de données pour le modèle linéaire.</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphique-du-modele-de-regression-lineaire"><strong>Graphique du modèle de regression linéaire</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q6-creez-et-entrainez-un-modele-knn-appele-knn-en-utilisant-les-donnees-d-entrainement-x-train-y-train-avec-le-parametre-n-neighbors-defini-sur-4"><strong>Q6) Créez et entraînez un modèle KNN appelé KNN en utilisant les données d’entraînement (<code class="docutils literal notranslate"><span class="pre">x_train</span></code>, <code class="docutils literal notranslate"><span class="pre">y_train</span></code>) avec le paramètre <code class="docutils literal notranslate"><span class="pre">n_neighbors</span></code> défini sur <code class="docutils literal notranslate"><span class="pre">4</span></code>.</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q7-utilisez-maintenant-la-methode-predict-sur-les-donnees-de-test-x-test-et-enregistrez-la-dans-le-tableau-predictions"><strong>Q7) Utilisez maintenant la méthode <code class="docutils literal notranslate"><span class="pre">predict</span></code> sur les données de test (<code class="docutils literal notranslate"><span class="pre">x_test</span></code>) et enregistrez-la dans le tableau <code class="docutils literal notranslate"><span class="pre">predictions</span></code>.</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q8-a-l-aide-des-predictions-et-de-la-trame-de-donnees-y-test-calculez-la-valeur-de-chaque-metrique-a-l-aide-de-la-fonction-appropriee"><strong>Q8) À l’aide des « prédictions » et de la trame de données « y_test », calculez la valeur de chaque métrique à l’aide de la fonction appropriée.</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphique-pour-le-modele-knn"><strong>Graphique pour le modèle KNN</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree"><strong>Decision Tree</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q9-creez-et-entrainez-un-modele-d-arbre-de-decision-appele-tree-en-utilisant-les-donnees-d-entrainement-x-train-y-train"><strong>Q9) Créez et entraînez un modèle d’arbre de décision appelé Tree en utilisant les données d’entraînement (<code class="docutils literal notranslate"><span class="pre">x_train</span></code>, <code class="docutils literal notranslate"><span class="pre">y_train</span></code>).</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q10-utilisez-maintenant-la-methode-predict-sur-les-donnees-de-test-x-test-et-enregistrez-la-dans-le-tableau-predictions"><strong>Q10) Utilisez maintenant la méthode <code class="docutils literal notranslate"><span class="pre">predict</span></code> sur les données de test (<code class="docutils literal notranslate"><span class="pre">x_test</span></code>) et enregistrez-la dans le tableau <code class="docutils literal notranslate"><span class="pre">predictions</span></code>.</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q11-a-l-aide-des-predictions-et-de-la-trame-de-donnees-y-test-calculez-la-valeur-de-chaque-metrique-a-l-aide-de-la-fonction-appropriee"><strong>Q11) À l’aide des « prédictions » et de la trame de données « y_test », calculez la valeur de chaque métrique à l’aide de la fonction appropriée.</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-representation-graphique"><strong>La représentation graphique</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logistic-regression"><strong>Logistic Regression</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q12-utilisez-la-fonction-train-test-split-pour-diviser-les-dataframes-features-et-y-avec-un-test-size-de-0-2-et-le-random-state-defini-sur-1"><strong>Q12) Utilisez la fonction <code class="docutils literal notranslate"><span class="pre">train_test_split</span></code> pour diviser les dataframes <code class="docutils literal notranslate"><span class="pre">features</span></code> et <code class="docutils literal notranslate"><span class="pre">Y</span></code> avec un <code class="docutils literal notranslate"><span class="pre">test_size</span></code> de <code class="docutils literal notranslate"><span class="pre">0.2</span></code> et le <code class="docutils literal notranslate"><span class="pre">random_state</span></code> défini sur <code class="docutils literal notranslate"><span class="pre">1</span></code>.</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q13-creez-et-entrainez-un-modele-logisticregression-appele-lr-en-utilisant-les-donnees-d-entrainement-x-train-y-train-avec-le-parametre-solver-defini-sur-liblinear"><strong>Q13) Créez et entraînez un modèle LogisticRegression appelé LR en utilisant les données d’entraînement (<code class="docutils literal notranslate"><span class="pre">x_train</span></code>, <code class="docutils literal notranslate"><span class="pre">y_train</span></code>) avec le paramètre <code class="docutils literal notranslate"><span class="pre">solver</span></code> défini sur <code class="docutils literal notranslate"><span class="pre">liblinear</span></code>.</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q14-maintenant-utilisez-les-methodes-predict-et-predict-proba-sur-les-donnees-de-test-x-test-et-enregistrez-les-sous-2-tableaux-predictions-et-predict-proba"><strong>#### Q14) Maintenant, utilisez les méthodes <code class="docutils literal notranslate"><span class="pre">predict</span></code> et <code class="docutils literal notranslate"><span class="pre">predict_proba</span></code> sur les données de test (<code class="docutils literal notranslate"><span class="pre">x_test</span></code>) et enregistrez-les sous 2 tableaux <code class="docutils literal notranslate"><span class="pre">predictions</span></code> et <code class="docutils literal notranslate"><span class="pre">predict_proba</span></code>.</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q15-a-l-aide-des-predictions-predict-proba-et-du-dataframe-y-test-calculez-la-valeur-de-chaque-metrique-a-l-aide-de-la-fonction-appropriee"><strong>Q15) À l’aide des « prédictions », « predict_proba » et du dataframe « y_test », calculez la valeur de chaque métrique à l’aide de la fonction appropriée.</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphique-pour-regression-logistique"><strong>Graphique pour régression Logistique</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#svm"><strong>SVM</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q16-creez-et-entrainez-un-modele-svm-appele-svm-en-utilisant-les-donnees-d-entrainement-x-train-y-train"><strong>Q16) Créez et entraînez un modèle SVM appelé SVM en utilisant les données d’entraînement (<code class="docutils literal notranslate"><span class="pre">x_train</span></code>, <code class="docutils literal notranslate"><span class="pre">y_train</span></code>).</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q17-utilisez-maintenant-la-methode-predict-sur-les-donnees-de-test-x-test-et-enregistrez-la-dans-le-tableau-predictions"><strong>Q17) Utilisez maintenant la méthode <code class="docutils literal notranslate"><span class="pre">predict</span></code> sur les données de test (<code class="docutils literal notranslate"><span class="pre">x_test</span></code>) et enregistrez-la dans le tableau <code class="docutils literal notranslate"><span class="pre">predictions</span></code>.</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q18-a-l-aide-des-predictions-et-de-la-trame-de-donnees-y-test-calculez-la-valeur-de-chaque-metrique-a-l-aide-de-la-fonction-appropriee"><strong>Q18) À l’aide des « prédictions » et de la trame de données « y_test », calculez la valeur de chaque métrique à l’aide de la fonction appropriée.</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q19-affichez-la-precision-l-indice-jaccard-le-score-f1-et-la-perte-de-log-dans-un-format-tabulaire-en-utilisant-un-bloc-de-donnees-pour-tous-les-modeles-ci-dessus"><strong>Q19) Affichez la précision, l’indice Jaccard, le score F1 et la perte de log dans un format tabulaire en utilisant un bloc de données pour tous les modèles ci-dessus.</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation"><strong>Evaluation</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions-des-metrics"><strong>Descriptions des métrics</strong></a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p>Ci-dessous, nous allons utiliser les algorithmes de classification pour créer un modèle basé sur nos données de formation et évaluer nos données de test à l’aide des métriques d’évaluation.</p>
+<p>Nous utiliserons certains des algorithmes suivants:</p>
+<ol class="arabic simple">
+<li><p>Régression linéaire</p></li>
+<li><p>KNN</p></li>
+<li><p>Arbres de décision</p></li>
+<li><p>Régression logistique</p></li>
+<li><p>SVM</p></li>
+</ol>
+<p>Nous évaluerons nos modèles en utilisant :</p>
+<ol class="arabic simple">
+<li><p>Score de précision : Accuracy Score</p></li>
+<li><p>Index Jaccard</p></li>
+<li><p>Score F1</p></li>
+<li><p>Perte de journal : LogLoss</p></li>
+<li><p>Erreur absolue moyenne : Mean Absolute Error</p></li>
+<li><p>Erreur quadratique moyenne : Mean Squared Error</p></li>
+<li><p>Score R2 : R2-Score</p></li>
+</ol>
+<section id="a-propos-de-la-base-des-donnees">
+<h1>A propos de la base des données<a class="headerlink" href="#a-propos-de-la-base-des-donnees" title="Link to this heading">#</a></h1>
+<p>La source originale des données est le Bureau de météorologie du gouvernement australien et les données les plus récentes peuvent être collectées à partir de [<a class="reference external" href="http://www.bom.gov.au/climate/dwo/">http://www.bom.gov.au/climate/dwo/</a>](<a class="reference external" href="http://www.bom.gov.au">http://www.bom.gov.au</a> /climate/dwo/?utm_medium=Exinfluencer&amp;utm_source=Exinfluencer&amp;utm_content=000026UJ&amp;utm_term=10006555&amp;utm_id=NA-SkillsNetwork-Channel-SkillsNetworkCoursesIBMDeveloperSkillsNetworkML0101ENSkillsNetwork20718538-2022-01-01).</p>
+<p>L’ensemble de données à utiliser comporte des colonnes supplémentaires telles que « RainToday » et notre cible est « RainTomorrow », qui a été collectée à partir du Rattle à l’adresse [<a class="reference external" href="https://bitbucket.org/kayontoga/rattle/src/master/data/weatherAUS.RData">https://bitbucket.org/kayontoga/rattle/src/master/data/weatherAUS.RData</a>] (<a class="reference external" href="https://bitbucket.org/kayontoga/rattle/src/master/data/weatherAUS.RData?utm_medium=Exinfluencer&amp;amp;utm_source=Exinfluencer&amp;amp;utm_content=000026UJ&amp;amp;utm_term=10006555&amp;amp;utm_id=NA-SkillsNetwork-Channel-SkillsNetworkCoursesIBMDeveloperSkillsNetworkML0101ENSkills">https://bitbucket.org/kayontoga/rattle/src/master/data/weatherAUS.RData?utm_medium=Exinfluencer&amp;utm_source=Exinfluencer&amp;utm_content=000026UJ&amp;utm_term=10006555&amp;utm_id=NA-SkillsNetwork-Channel-SkillsNetworkCoursesIBMDeveloperSkillsNetworkML0101ENSkills</a> Réseau20718538-2022-01-01)</p>
+<p>Cet ensemble de données contient des observations de mesures météorologiques pour chaque jour de 2008 à 2017. L’ensemble de données <strong>weatherAUS.csv</strong> comprend les champs suivants :</p>
+<p>| Champ | Descriptif | Unité | Tapez |
+| ————- | ————————————————– — | ————— | —— |
+| Date | Date de l’observation en AAAA-MM-JJ | Dates | objet |
+| Location | Lieu de l’observation | Localisation | objet |
+| MinTemp | Température minimale | Celsius | flotter |
+| MaxTemp | Température maximale | Celsius | flotter |
+| Rainfall | Quantité de précipitations | Millimètres | flotter |
+| Evaporation | Quantité d’évaporation | Millimètres | flotter |
+| Sunshine | Quantité de soleil éclatant | heures | flotter |
+| WindGustDir | Direction de la rafale la plus forte | Points de boussole | objet |
+| VitesseGustVent | Vitesse de la rafale la plus forte | Kilomètres/heure | objet |
+| VentDir9am | Direction du vent en moyenne 10 minutes avant 9h | Points de boussole | objet |
+| WindDir15h | Direction du vent en moyenne 10 minutes avant 15h | Points de boussole | objet |
+| Vitesse du vent9h | Vitesse du vent moyenne de 10 minutes avant 9h | Kilomètres/heure | flotter |
+| Vitesse du vent15h | Vitesse du vent moyenne de 10 minutes avant 15 heures | Kilomètres/heure | flotter |
+| Humidité9h | Humidité à 9h | Pourcentage | flotter |
+| Humidité15h | Humidité à 15h | Pourcentage | flotter |
+| Pression9h | Pression atmosphérique réduite au niveau moyen de la mer à 9h | Hectopascal | flotter |
+| Pression15h | Pression atmosphérique réduite au niveau moyen de la mer à 15h | Hectopascal | flotter |
+| Nuage9h | Fraction du ciel obscurcie par des nuages à 9h | Huit | flotter |
+| Nuage15h | Fraction du ciel obscurcie par des nuages à 15h | Huit | flotter |
+| Temp9h | Température à 9h | Celsius | flotter |
+| Temp15h | Température à 15h | Celsius | flotter |
+| PluieAujourd’hui | S’il pleuvait aujourd’hui | Oui/Non | objet |
+| PluieDemain | S’il pleut demain | Oui/Non | flotter |</p>
+<p>Les définitions des colonnes ont été recueillies à partir de [<a class="reference external" href="http://www.bom.gov.au/climate/dwo/IDCJDW0000.shtml">http://www.bom.gov.au/climate/dwo/IDCJDW0000.shtml</a>](<a class="reference external" href="http://www.bom.gov.au/climate/dwo/IDCJDW0000.shtml?utm_medium=Exinfluencer&amp;amp;utm_source">http://www.bom.gov.au/climate/dwo/IDCJDW0000.shtml?utm_medium=Exinfluencer&amp;utm_source</a> =Exinfluencer&amp;utm_content=000026UJ&amp;utm_term=10006555&amp;utm_id=NA-SkillsNetwork-Channel-SkillsNetworkCoursesIBMDeveloperSkillsNetworkML0101ENSkillsNetwork20718538-2022-01-01)</p>
+</section>
+<section id="importation-des-mibrairies-necessaires">
+<h1>Importation des mibrairies nécessaires<a class="headerlink" href="#importation-des-mibrairies-necessaires" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">preprocessing</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">svm</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">jaccard_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">f1_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">log_loss</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span><span class="p">,</span> <span class="n">accuracy_score</span>
+<span class="kn">import</span> <span class="nn">sklearn.metrics</span> <span class="k">as</span> <span class="nn">metrics</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_absolute_error</span><span class="p">,</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">r2_score</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">graphviz</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">export_graphviz</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeRegressor</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">preprocessing</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;sklearn&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Importons la base des données</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-ML0101EN-SkillUp/labs/ML-FinalAssignment/Weather_Data.csv&#39;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-d6ab0e4a-95b5-4dc6-a448-107f2938e879" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>MinTemp</th>
+      <th>MaxTemp</th>
+      <th>Rainfall</th>
+      <th>Evaporation</th>
+      <th>Sunshine</th>
+      <th>WindGustDir</th>
+      <th>WindGustSpeed</th>
+      <th>WindDir9am</th>
+      <th>WindDir3pm</th>
+      <th>...</th>
+      <th>Humidity9am</th>
+      <th>Humidity3pm</th>
+      <th>Pressure9am</th>
+      <th>Pressure3pm</th>
+      <th>Cloud9am</th>
+      <th>Cloud3pm</th>
+      <th>Temp9am</th>
+      <th>Temp3pm</th>
+      <th>RainToday</th>
+      <th>RainTomorrow</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2/1/2008</td>
+      <td>19.5</td>
+      <td>22.4</td>
+      <td>15.6</td>
+      <td>6.2</td>
+      <td>0.0</td>
+      <td>W</td>
+      <td>41</td>
+      <td>S</td>
+      <td>SSW</td>
+      <td>...</td>
+      <td>92</td>
+      <td>84</td>
+      <td>1017.6</td>
+      <td>1017.4</td>
+      <td>8</td>
+      <td>8</td>
+      <td>20.7</td>
+      <td>20.9</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2/2/2008</td>
+      <td>19.5</td>
+      <td>25.6</td>
+      <td>6.0</td>
+      <td>3.4</td>
+      <td>2.7</td>
+      <td>W</td>
+      <td>41</td>
+      <td>W</td>
+      <td>E</td>
+      <td>...</td>
+      <td>83</td>
+      <td>73</td>
+      <td>1017.9</td>
+      <td>1016.4</td>
+      <td>7</td>
+      <td>7</td>
+      <td>22.4</td>
+      <td>24.8</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2/3/2008</td>
+      <td>21.6</td>
+      <td>24.5</td>
+      <td>6.6</td>
+      <td>2.4</td>
+      <td>0.1</td>
+      <td>W</td>
+      <td>41</td>
+      <td>ESE</td>
+      <td>ESE</td>
+      <td>...</td>
+      <td>88</td>
+      <td>86</td>
+      <td>1016.7</td>
+      <td>1015.6</td>
+      <td>7</td>
+      <td>8</td>
+      <td>23.5</td>
+      <td>23.0</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2/4/2008</td>
+      <td>20.2</td>
+      <td>22.8</td>
+      <td>18.8</td>
+      <td>2.2</td>
+      <td>0.0</td>
+      <td>W</td>
+      <td>41</td>
+      <td>NNE</td>
+      <td>E</td>
+      <td>...</td>
+      <td>83</td>
+      <td>90</td>
+      <td>1014.2</td>
+      <td>1011.8</td>
+      <td>8</td>
+      <td>8</td>
+      <td>21.4</td>
+      <td>20.9</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2/5/2008</td>
+      <td>19.7</td>
+      <td>25.7</td>
+      <td>77.4</td>
+      <td>4.8</td>
+      <td>0.0</td>
+      <td>W</td>
+      <td>41</td>
+      <td>NNE</td>
+      <td>W</td>
+      <td>...</td>
+      <td>88</td>
+      <td>74</td>
+      <td>1008.3</td>
+      <td>1004.8</td>
+      <td>8</td>
+      <td>8</td>
+      <td>22.5</td>
+      <td>25.5</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 22 columns</p>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-d6ab0e4a-95b5-4dc6-a448-107f2938e879')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-d6ab0e4a-95b5-4dc6-a448-107f2938e879 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-d6ab0e4a-95b5-4dc6-a448-107f2938e879');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-016357a1-6417-411a-b422-0fe7501fcfec">
+  <button class="colab-df-quickchart" onclick="quickchart('df-016357a1-6417-411a-b422-0fe7501fcfec')"
+            title="Suggest charts."
+            style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-016357a1-6417-411a-b422-0fe7501fcfec button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div></div>
+</div>
+<section id="pretraitement-des-donnees">
+<h2>Prétraitement des données<a class="headerlink" href="#pretraitement-des-donnees" title="Link to this heading">#</a></h2>
+<p><strong>Codage à chaud des variables</strong></p>
+<p>Tout d’abord, nous devons effectuer un codage à chaud pour convertir les variables catégorielles en variables binaires.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_sydney_processed</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;RainToday&#39;</span><span class="p">,</span> <span class="s1">&#39;WindGustDir&#39;</span><span class="p">,</span> <span class="s1">&#39;WindDir9am&#39;</span><span class="p">,</span> <span class="s1">&#39;WindDir3pm&#39;</span><span class="p">])</span>
+<span class="n">df_sydney_processed</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-fe1e6d47-957e-44f6-a64c-946a35748f6d" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>MinTemp</th>
+      <th>MaxTemp</th>
+      <th>Rainfall</th>
+      <th>Evaporation</th>
+      <th>Sunshine</th>
+      <th>WindGustSpeed</th>
+      <th>WindSpeed9am</th>
+      <th>WindSpeed3pm</th>
+      <th>Humidity9am</th>
+      <th>...</th>
+      <th>WindDir3pm_NNW</th>
+      <th>WindDir3pm_NW</th>
+      <th>WindDir3pm_S</th>
+      <th>WindDir3pm_SE</th>
+      <th>WindDir3pm_SSE</th>
+      <th>WindDir3pm_SSW</th>
+      <th>WindDir3pm_SW</th>
+      <th>WindDir3pm_W</th>
+      <th>WindDir3pm_WNW</th>
+      <th>WindDir3pm_WSW</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2/1/2008</td>
+      <td>19.5</td>
+      <td>22.4</td>
+      <td>15.6</td>
+      <td>6.2</td>
+      <td>0.0</td>
+      <td>41</td>
+      <td>17</td>
+      <td>20</td>
+      <td>92</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2/2/2008</td>
+      <td>19.5</td>
+      <td>25.6</td>
+      <td>6.0</td>
+      <td>3.4</td>
+      <td>2.7</td>
+      <td>41</td>
+      <td>9</td>
+      <td>13</td>
+      <td>83</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2/3/2008</td>
+      <td>21.6</td>
+      <td>24.5</td>
+      <td>6.6</td>
+      <td>2.4</td>
+      <td>0.1</td>
+      <td>41</td>
+      <td>17</td>
+      <td>2</td>
+      <td>88</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2/4/2008</td>
+      <td>20.2</td>
+      <td>22.8</td>
+      <td>18.8</td>
+      <td>2.2</td>
+      <td>0.0</td>
+      <td>41</td>
+      <td>22</td>
+      <td>20</td>
+      <td>83</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2/5/2008</td>
+      <td>19.7</td>
+      <td>25.7</td>
+      <td>77.4</td>
+      <td>4.8</td>
+      <td>0.0</td>
+      <td>41</td>
+      <td>11</td>
+      <td>6</td>
+      <td>88</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 68 columns</p>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-fe1e6d47-957e-44f6-a64c-946a35748f6d')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-fe1e6d47-957e-44f6-a64c-946a35748f6d button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-fe1e6d47-957e-44f6-a64c-946a35748f6d');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-23299f1e-c126-4e42-820b-6faa88c06938">
+  <button class="colab-df-quickchart" onclick="quickchart('df-23299f1e-c126-4e42-820b-6faa88c06938')"
+            title="Suggest charts."
+            style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-23299f1e-c126-4e42-820b-6faa88c06938 button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div></div>
+</div>
+<p>Ensuite, nous remplaçons les valeurs de la colonne « RainTomorrow » en les faisant passer d’une colonne catégorielle à une colonne binaire. Nous n’utilisons pas la méthode <code class="docutils literal notranslate"><span class="pre">get_dummies</span></code> car nous nous retrouverions avec deux colonnes pour ‘RainTomorrow’ et nous ne le voulons pas, puisque ‘RainTomorrow’ est notre cible.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_sydney_processed</span><span class="o">.</span><span class="n">replace</span><span class="p">([</span><span class="s1">&#39;No&#39;</span><span class="p">,</span> <span class="s1">&#39;Yes&#39;</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df_sydney_processed</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;Date&#39;, &#39;MinTemp&#39;, &#39;MaxTemp&#39;, &#39;Rainfall&#39;, &#39;Evaporation&#39;, &#39;Sunshine&#39;,
+       &#39;WindGustSpeed&#39;, &#39;WindSpeed9am&#39;, &#39;WindSpeed3pm&#39;, &#39;Humidity9am&#39;,
+       &#39;Humidity3pm&#39;, &#39;Pressure9am&#39;, &#39;Pressure3pm&#39;, &#39;Cloud9am&#39;, &#39;Cloud3pm&#39;,
+       &#39;Temp9am&#39;, &#39;Temp3pm&#39;, &#39;RainTomorrow&#39;, &#39;RainToday_No&#39;, &#39;RainToday_Yes&#39;,
+       &#39;WindGustDir_E&#39;, &#39;WindGustDir_ENE&#39;, &#39;WindGustDir_ESE&#39;, &#39;WindGustDir_N&#39;,
+       &#39;WindGustDir_NE&#39;, &#39;WindGustDir_NNE&#39;, &#39;WindGustDir_NNW&#39;,
+       &#39;WindGustDir_NW&#39;, &#39;WindGustDir_S&#39;, &#39;WindGustDir_SE&#39;, &#39;WindGustDir_SSE&#39;,
+       &#39;WindGustDir_SSW&#39;, &#39;WindGustDir_SW&#39;, &#39;WindGustDir_W&#39;, &#39;WindGustDir_WNW&#39;,
+       &#39;WindGustDir_WSW&#39;, &#39;WindDir9am_E&#39;, &#39;WindDir9am_ENE&#39;, &#39;WindDir9am_ESE&#39;,
+       &#39;WindDir9am_N&#39;, &#39;WindDir9am_NE&#39;, &#39;WindDir9am_NNE&#39;, &#39;WindDir9am_NNW&#39;,
+       &#39;WindDir9am_NW&#39;, &#39;WindDir9am_S&#39;, &#39;WindDir9am_SE&#39;, &#39;WindDir9am_SSE&#39;,
+       &#39;WindDir9am_SSW&#39;, &#39;WindDir9am_SW&#39;, &#39;WindDir9am_W&#39;, &#39;WindDir9am_WNW&#39;,
+       &#39;WindDir9am_WSW&#39;, &#39;WindDir3pm_E&#39;, &#39;WindDir3pm_ENE&#39;, &#39;WindDir3pm_ESE&#39;,
+       &#39;WindDir3pm_N&#39;, &#39;WindDir3pm_NE&#39;, &#39;WindDir3pm_NNE&#39;, &#39;WindDir3pm_NNW&#39;,
+       &#39;WindDir3pm_NW&#39;, &#39;WindDir3pm_S&#39;, &#39;WindDir3pm_SE&#39;, &#39;WindDir3pm_SSE&#39;,
+       &#39;WindDir3pm_SSW&#39;, &#39;WindDir3pm_SW&#39;, &#39;WindDir3pm_W&#39;, &#39;WindDir3pm_WNW&#39;,
+       &#39;WindDir3pm_WSW&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="donnees-d-entrainement-et-de-test">
+<h2>Données d’entrainement et de test<a class="headerlink" href="#donnees-d-entrainement-et-de-test" title="Link to this heading">#</a></h2>
+<p>Maintenant, nous définissons nos « caractéristiques » ou valeurs x et notre variable Y ou cible.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_sydney_processed</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_sydney_processed</span> <span class="o">=</span> <span class="n">df_sydney_processed</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">features</span> <span class="o">=</span> <span class="n">df_sydney_processed</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span> <span class="s1">&#39;RainTomorrow&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">features</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3271, 66)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">df_sydney_processed</span><span class="p">[</span><span class="s1">&#39;RainTomorrow&#39;</span><span class="p">]</span>
+<span class="n">y</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3271,)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="la-regression-lineaire">
+<h2>La régression linéaire<a class="headerlink" href="#la-regression-lineaire" title="Link to this heading">#</a></h2>
+<section id="q1-utiliser-la-fonction-train-test-split-pour-diviser-le-features-et-y-dataframes-avectest-size-de-0-2-et-le-random-state-egale-a-10">
+<h3><strong>Q1) Utiliser la fonction <code class="docutils literal notranslate"><span class="pre">train_test_split</span></code> pour diviser le <code class="docutils literal notranslate"><span class="pre">features</span></code> et <code class="docutils literal notranslate"><span class="pre">Y</span></code> dataframes avec<code class="docutils literal notranslate"><span class="pre">test_size</span></code> de <code class="docutils literal notranslate"><span class="pre">0.2</span></code> et le <code class="docutils literal notranslate"><span class="pre">random_state</span></code> égale <strong>à</strong> <code class="docutils literal notranslate"><span class="pre">10</span></code>.</strong><a class="headerlink" href="#q1-utiliser-la-fonction-train-test-split-pour-diviser-le-features-et-y-dataframes-avectest-size-de-0-2-et-le-random-state-egale-a-10" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Entrer le Code, Execute and take the Screenshot</span>
+<span class="n">x_train</span><span class="p">,</span> <span class="n">x_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="q2-creez-et-entrainez-un-modele-de-regression-lineaire-appele-linearreg-a-l-aide-des-donnees-d-entrainement-x-train-y-train">
+<h3><strong>Q2) Créez et entraînez un modèle de régression linéaire appelé LinearReg à l’aide des données d’entraînement (<code class="docutils literal notranslate"><span class="pre">x_train</span></code>, <code class="docutils literal notranslate"><span class="pre">y_train</span></code>).</strong><a class="headerlink" href="#q2-creez-et-entrainez-un-modele-de-regression-lineaire-appele-linearreg-a-l-aide-des-donnees-d-entrainement-x-train-y-train" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">LinearReg</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+<span class="n">LinearReg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>#sk-container-id-8 {color: black;background-color: white;}#sk-container-id-8 pre{padding: 0;}#sk-container-id-8 div.sk-toggleable {background-color: white;}#sk-container-id-8 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-8 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-8 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-8 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-8 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-8 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-8 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-8 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-8 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-8 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-8 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-8 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-8 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-8 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-8 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-8 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-8 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-8 div.sk-item {position: relative;z-index: 1;}#sk-container-id-8 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-8 div.sk-item::before, #sk-container-id-8 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-8 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-8 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-8 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-8 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-8 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-8 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-8 div.sk-label-container {text-align: center;}#sk-container-id-8 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-8 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-8" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>LinearRegression()</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-8" type="checkbox" checked><label for="sk-estimator-id-8" class="sk-toggleable__label sk-toggleable__label-arrow">LinearRegression</label><div class="sk-toggleable__content"><pre>LinearRegression()</pre></div></div></div></div></div></div></div>
+</div>
+</section>
+<section id="q3-utilisez-maintenant-la-methode-predict-sur-les-donnees-de-test-x-test-et-enregistrez-la-dans-le-tableau-predictions">
+<h3><strong>Q3) Utilisez maintenant la méthode <code class="docutils literal notranslate"><span class="pre">predict</span></code> sur les données de test (<code class="docutils literal notranslate"><span class="pre">x_test</span></code>) et enregistrez-la dans le tableau <code class="docutils literal notranslate"><span class="pre">predictions</span></code>.</strong><a class="headerlink" href="#q3-utilisez-maintenant-la-methode-predict-sur-les-donnees-de-test-x-test-et-enregistrez-la-dans-le-tableau-predictions" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predictions</span> <span class="o">=</span> <span class="n">LinearReg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="q4-a-l-aide-des-predictions-et-de-la-trame-de-donnees-y-test-calculez-la-valeur-de-chaque-metrique-a-l-aide-de-la-fonction-appropriee">
+<h3><strong>Q4) À l’aide des « prédictions » et de la trame de données « y_test », calculez la valeur de chaque métrique à l’aide de la fonction appropriée.</strong><a class="headerlink" href="#q4-a-l-aide-des-predictions-et-de-la-trame-de-donnees-y-test-calculez-la-valeur-de-chaque-metrique-a-l-aide-de-la-fonction-appropriee" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">LinearRegression_MAE</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">)</span>
+<span class="n">LinearRegression_MSE</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">))</span>
+<span class="n">LinearRegression_R2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">LinearRegression_MAE</span><span class="p">,</span> <span class="n">LinearRegression_MSE</span><span class="p">,</span> <span class="n">LinearRegression_R2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.26556575280109435 0.35092226893550144 0.3862776651125921
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="q5-affichez-le-mae-le-mse-et-le-r2-dans-un-format-tabulaire-en-utilisant-le-bloc-de-donnees-pour-le-modele-lineaire">
+<h3><strong>Q5) Affichez le MAE, le MSE et le R2 dans un format tabulaire en utilisant le bloc de données pour le modèle linéaire.</strong><a class="headerlink" href="#q5-affichez-le-mae-le-mse-et-le-r2-dans-un-format-tabulaire-en-utilisant-le-bloc-de-donnees-pour-le-modele-lineaire" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Report</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;MAE&quot;</span><span class="p">:</span><span class="n">LinearRegression_MAE</span><span class="p">,</span> <span class="s2">&quot;MSE&quot;</span><span class="p">:</span><span class="n">LinearRegression_MSE</span><span class="p">,</span> <span class="s2">&quot;R2&quot;</span><span class="p">:</span><span class="n">LinearRegression_R2</span><span class="p">}</span>
+<span class="n">Report</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">Report</span><span class="p">])</span>
+<span class="n">Report</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-359a0dff-3cc1-4561-9f22-b65aba9a65d3" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>MAE</th>
+      <th>MSE</th>
+      <th>R2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.265566</td>
+      <td>0.350922</td>
+      <td>0.386278</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-359a0dff-3cc1-4561-9f22-b65aba9a65d3')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-359a0dff-3cc1-4561-9f22-b65aba9a65d3 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-359a0dff-3cc1-4561-9f22-b65aba9a65d3');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+    </div>
+  </div>
+</div></div>
+</div>
+</section>
+<section id="graphique-du-modele-de-regression-lineaire">
+<h3><strong>Graphique du modèle de regression linéaire</strong><a class="headerlink" href="#graphique-du-modele-de-regression-lineaire" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Créez un graphique à nuage de points</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Prédictions&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="nb">min</span><span class="p">(</span><span class="n">y_test</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">y_test</span><span class="p">)],</span> <span class="p">[</span><span class="nb">min</span><span class="p">(</span><span class="n">y_test</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">y_test</span><span class="p">)],</span> <span class="s1">&#39;k--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Ligne de référence&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Valeurs Réelles&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Prédictions du modèle&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Graphique à nuage de points - regrèssion linéaire&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-131-c4dc8d95944c&gt;:4: UserWarning: color is redundantly defined by the &#39;color&#39; keyword argument and the fmt string &quot;k--&quot; (-&gt; color=&#39;k&#39;). The keyword argument will take precedence.
+  plt.plot([min(y_test), max(y_test)], [min(y_test), max(y_test)], &#39;k--&#39;, lw=2, c=&#39;red&#39;, label=&#39;Ligne de référence&#39;)
+</pre></div>
+</div>
+<img alt="_images/db51e2c194a201fdf72fcc28bb45f2decf9c2d6d9f9ddd635c29b14f7af68558.png" src="_images/db51e2c194a201fdf72fcc28bb45f2decf9c2d6d9f9ddd635c29b14f7af68558.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Graphique</span>
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><h1 class="rubric" id="le-modele-knn"><strong>Le modéle KNN</strong></h1>
+</div></blockquote>
+</section>
+<section id="q6-creez-et-entrainez-un-modele-knn-appele-knn-en-utilisant-les-donnees-d-entrainement-x-train-y-train-avec-le-parametre-n-neighbors-defini-sur-4">
+<h3><strong>Q6) Créez et entraînez un modèle KNN appelé KNN en utilisant les données d’entraînement (<code class="docutils literal notranslate"><span class="pre">x_train</span></code>, <code class="docutils literal notranslate"><span class="pre">y_train</span></code>) avec le paramètre <code class="docutils literal notranslate"><span class="pre">n_neighbors</span></code> défini sur <code class="docutils literal notranslate"><span class="pre">4</span></code>.</strong><a class="headerlink" href="#q6-creez-et-entrainez-un-modele-knn-appele-knn-en-utilisant-les-donnees-d-entrainement-x-train-y-train-avec-le-parametre-n-neighbors-defini-sur-4" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">KNN</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,)</span>
+<span class="n">KNN</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>#sk-container-id-12 {color: black;background-color: white;}#sk-container-id-12 pre{padding: 0;}#sk-container-id-12 div.sk-toggleable {background-color: white;}#sk-container-id-12 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-12 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-12 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-12 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-12 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-12 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-12 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-12 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-12 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-12 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-12 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-12 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-12 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-12 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-12 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-12 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-12 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-12 div.sk-item {position: relative;z-index: 1;}#sk-container-id-12 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-12 div.sk-item::before, #sk-container-id-12 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-12 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-12 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-12 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-12 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-12 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-12 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-12 div.sk-label-container {text-align: center;}#sk-container-id-12 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-12 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-12" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>KNeighborsClassifier(n_neighbors=4)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-12" type="checkbox" checked><label for="sk-estimator-id-12" class="sk-toggleable__label sk-toggleable__label-arrow">KNeighborsClassifier</label><div class="sk-toggleable__content"><pre>KNeighborsClassifier(n_neighbors=4)</pre></div></div></div></div></div></div></div>
+</div>
+</section>
+<section id="q7-utilisez-maintenant-la-methode-predict-sur-les-donnees-de-test-x-test-et-enregistrez-la-dans-le-tableau-predictions">
+<h3><strong>Q7) Utilisez maintenant la méthode <code class="docutils literal notranslate"><span class="pre">predict</span></code> sur les données de test (<code class="docutils literal notranslate"><span class="pre">x_test</span></code>) et enregistrez-la dans le tableau <code class="docutils literal notranslate"><span class="pre">predictions</span></code>.</strong><a class="headerlink" href="#q7-utilisez-maintenant-la-methode-predict-sur-les-donnees-de-test-x-test-et-enregistrez-la-dans-le-tableau-predictions" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predictions</span> <span class="o">=</span> <span class="n">KNN</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predict_proba</span> <span class="o">=</span> <span class="n">KNN</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="q8-a-l-aide-des-predictions-et-de-la-trame-de-donnees-y-test-calculez-la-valeur-de-chaque-metrique-a-l-aide-de-la-fonction-appropriee">
+<h3><strong>Q8) À l’aide des « prédictions » et de la trame de données « y_test », calculez la valeur de chaque métrique à l’aide de la fonction appropriée.</strong><a class="headerlink" href="#q8-a-l-aide-des-predictions-et-de-la-trame-de-donnees-y-test-calculez-la-valeur-de-chaque-metrique-a-l-aide-de-la-fonction-appropriee" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">KNN_Accuracy_Score</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<span class="n">KNN_JaccardIndex</span> <span class="o">=</span> <span class="n">jaccard_score</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<span class="n">KNN_F1_Score</span> <span class="o">=</span> <span class="n">f1_score</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Report_KNN</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Accuracy_Score&quot;</span><span class="p">:</span><span class="n">KNN_Accuracy_Score</span><span class="p">,</span> <span class="s2">&quot;JaccardIndex&quot;</span><span class="p">:</span><span class="n">KNN_JaccardIndex</span><span class="p">,</span> <span class="s2">&quot;F1_Score&quot;</span><span class="p">:</span><span class="n">KNN_F1_Score</span><span class="p">}</span>
+<span class="n">Report_KNN</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">Report_KNN</span><span class="p">])</span>
+<span class="n">Report_KNN</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-523b21bf-5505-4c1e-8ee1-1e1b5f0406bf" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Accuracy_Score</th>
+      <th>JaccardIndex</th>
+      <th>F1_Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.812214</td>
+      <td>0.394089</td>
+      <td>0.565371</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-523b21bf-5505-4c1e-8ee1-1e1b5f0406bf')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-523b21bf-5505-4c1e-8ee1-1e1b5f0406bf button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-523b21bf-5505-4c1e-8ee1-1e1b5f0406bf');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+    </div>
+  </div>
+</div></div>
+</div>
+</section>
+<section id="graphique-pour-le-modele-knn">
+<h3><strong>Graphique pour le modèle KNN</strong><a class="headerlink" href="#graphique-pour-le-modele-knn" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="c1"># Obtenez les prédictions de votre modèle (y_pred) et les vraies valeurs (y_true)</span>
+<span class="c1"># Créez une matrice de confusion</span>
+<span class="n">confusion</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">)</span>
+
+<span class="c1"># Affichez la matrice de confusion sous forme de heatmap</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">confusion</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Blues&quot;</span><span class="p">,</span> <span class="n">cbar</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Prédictions&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Vraies Valeurs&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Matrice de Confusion pour le modèle KNN&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/9c074cc9aef2410fdd8395d7272f3c0692da985abea670fe9a890eda3e3fd7b8.png" src="_images/9c074cc9aef2410fdd8395d7272f3c0692da985abea670fe9a890eda3e3fd7b8.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_curve</span><span class="p">,</span> <span class="n">auc</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+
+
+<span class="c1"># Calculez la courbe ROC</span>
+<span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">thresholds</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">)</span>
+
+<span class="c1"># Calculez l&#39;aire sous la courbe ROC (AUC)</span>
+<span class="n">roc_auc</span> <span class="o">=</span> <span class="n">auc</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">)</span>
+
+<span class="c1"># Tracez la courbe ROC</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;darkorange&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Courbe ROC (AUC = </span><span class="si">%0.2f</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="n">roc_auc</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;navy&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.05</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Taux de Faux Positifs&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Taux de Vrais Positifs&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Courbe ROC&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/37f5ad79572832fdb4b07203f39556600ba9cc674fe9fbc5c81c57ecc30ef383.png" src="_images/37f5ad79572832fdb4b07203f39556600ba9cc674fe9fbc5c81c57ecc30ef383.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="decision-tree">
+<h2><strong>Decision Tree</strong><a class="headerlink" href="#decision-tree" title="Link to this heading">#</a></h2>
+<section id="q9-creez-et-entrainez-un-modele-d-arbre-de-decision-appele-tree-en-utilisant-les-donnees-d-entrainement-x-train-y-train">
+<h3><strong>Q9) Créez et entraînez un modèle d’arbre de décision appelé Tree en utilisant les données d’entraînement (<code class="docutils literal notranslate"><span class="pre">x_train</span></code>, <code class="docutils literal notranslate"><span class="pre">y_train</span></code>).</strong><a class="headerlink" href="#q9-creez-et-entrainez-un-modele-d-arbre-de-decision-appele-tree-en-utilisant-les-donnees-d-entrainement-x-train-y-train" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Tree</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">Tree</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>#sk-container-id-18 {color: black;background-color: white;}#sk-container-id-18 pre{padding: 0;}#sk-container-id-18 div.sk-toggleable {background-color: white;}#sk-container-id-18 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-18 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-18 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-18 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-18 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-18 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-18 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-18 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-18 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-18 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-18 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-18 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-18 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-18 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-18 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-18 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-18 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-18 div.sk-item {position: relative;z-index: 1;}#sk-container-id-18 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-18 div.sk-item::before, #sk-container-id-18 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-18 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-18 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-18 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-18 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-18 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-18 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-18 div.sk-label-container {text-align: center;}#sk-container-id-18 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-18 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-18" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>DecisionTreeClassifier()</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-18" type="checkbox" checked><label for="sk-estimator-id-18" class="sk-toggleable__label sk-toggleable__label-arrow">DecisionTreeClassifier</label><div class="sk-toggleable__content"><pre>DecisionTreeClassifier()</pre></div></div></div></div></div></div></div>
+</div>
+</section>
+<section id="q10-utilisez-maintenant-la-methode-predict-sur-les-donnees-de-test-x-test-et-enregistrez-la-dans-le-tableau-predictions">
+<h3><strong>Q10) Utilisez maintenant la méthode <code class="docutils literal notranslate"><span class="pre">predict</span></code> sur les données de test (<code class="docutils literal notranslate"><span class="pre">x_test</span></code>) et enregistrez-la dans le tableau <code class="docutils literal notranslate"><span class="pre">predictions</span></code>.</strong><a class="headerlink" href="#q10-utilisez-maintenant-la-methode-predict-sur-les-donnees-de-test-x-test-et-enregistrez-la-dans-le-tableau-predictions" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predictions</span> <span class="o">=</span> <span class="n">Tree</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predict_proba</span><span class="o">=</span><span class="n">Tree</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="q11-a-l-aide-des-predictions-et-de-la-trame-de-donnees-y-test-calculez-la-valeur-de-chaque-metrique-a-l-aide-de-la-fonction-appropriee">
+<h3><strong>Q11) À l’aide des « prédictions » et de la trame de données « y_test », calculez la valeur de chaque métrique à l’aide de la fonction appropriée.</strong><a class="headerlink" href="#q11-a-l-aide-des-predictions-et-de-la-trame-de-donnees-y-test-calculez-la-valeur-de-chaque-metrique-a-l-aide-de-la-fonction-appropriee" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Tree_Accuracy_Score</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<span class="n">Tree_JaccardIndex</span> <span class="o">=</span> <span class="n">jaccard_score</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<span class="n">Tree_F1_Score</span> <span class="o">=</span> <span class="n">f1_score</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Report_tree</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Accuracy_Score&quot;</span><span class="p">:</span><span class="n">Tree_Accuracy_Score</span><span class="p">,</span> <span class="s2">&quot;JaccardIndex&quot;</span><span class="p">:</span><span class="n">Tree_JaccardIndex</span><span class="p">,</span> <span class="s2">&quot;F1_Score&quot;</span><span class="p">:</span><span class="n">Tree_F1_Score</span><span class="p">}</span>
+<span class="n">Report_tree</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">Report_tree</span><span class="p">])</span>
+<span class="n">Report_tree</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-c8815c22-1f4f-4ebb-837f-7852b52a8d95" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Accuracy_Score</th>
+      <th>JaccardIndex</th>
+      <th>F1_Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.758779</td>
+      <td>0.360324</td>
+      <td>0.529762</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-c8815c22-1f4f-4ebb-837f-7852b52a8d95')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-c8815c22-1f4f-4ebb-837f-7852b52a8d95 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-c8815c22-1f4f-4ebb-837f-7852b52a8d95');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+    </div>
+  </div>
+</div></div>
+</div>
+</section>
+<section id="la-representation-graphique">
+<h3><strong>La représentation graphique</strong><a class="headerlink" href="#la-representation-graphique" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="c1"># Obtenez les prédictions de votre modèle (y_pred) et les vraies valeurs (y_true)</span>
+<span class="c1"># Créez une matrice de confusion</span>
+<span class="n">confusion</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">)</span>
+
+<span class="c1"># Affichez la matrice de confusion sous forme de heatmap</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">confusion</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Blues&quot;</span><span class="p">,</span> <span class="n">cbar</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Prédictions&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Vraies Valeurs&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Matrice de Confusion pour le modèle de Tree&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/8f4e7da9b9da77f764e255254f45edc3d07abd220f1f2e60549652ca6b6688e1.png" src="_images/8f4e7da9b9da77f764e255254f45edc3d07abd220f1f2e60549652ca6b6688e1.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="logistic-regression">
+<h2><strong>Logistic Regression</strong><a class="headerlink" href="#logistic-regression" title="Link to this heading">#</a></h2>
+<section id="q12-utilisez-la-fonction-train-test-split-pour-diviser-les-dataframes-features-et-y-avec-un-test-size-de-0-2-et-le-random-state-defini-sur-1">
+<h3><strong>Q12) Utilisez la fonction <code class="docutils literal notranslate"><span class="pre">train_test_split</span></code> pour diviser les dataframes <code class="docutils literal notranslate"><span class="pre">features</span></code> et <code class="docutils literal notranslate"><span class="pre">Y</span></code> avec un <code class="docutils literal notranslate"><span class="pre">test_size</span></code> de <code class="docutils literal notranslate"><span class="pre">0.2</span></code> et le <code class="docutils literal notranslate"><span class="pre">random_state</span></code> défini sur <code class="docutils literal notranslate"><span class="pre">1</span></code>.</strong><a class="headerlink" href="#q12-utilisez-la-fonction-train-test-split-pour-diviser-les-dataframes-features-et-y-avec-un-test-size-de-0-2-et-le-random-state-defini-sur-1" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_train</span><span class="p">,</span> <span class="n">x_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="q13-creez-et-entrainez-un-modele-logisticregression-appele-lr-en-utilisant-les-donnees-d-entrainement-x-train-y-train-avec-le-parametre-solver-defini-sur-liblinear">
+<h3><strong>Q13) Créez et entraînez un modèle LogisticRegression appelé LR en utilisant les données d’entraînement (<code class="docutils literal notranslate"><span class="pre">x_train</span></code>, <code class="docutils literal notranslate"><span class="pre">y_train</span></code>) avec le paramètre <code class="docutils literal notranslate"><span class="pre">solver</span></code> défini sur <code class="docutils literal notranslate"><span class="pre">liblinear</span></code>.</strong><a class="headerlink" href="#q13-creez-et-entrainez-un-modele-logisticregression-appele-lr-en-utilisant-les-donnees-d-entrainement-x-train-y-train-avec-le-parametre-solver-defini-sur-liblinear" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">LR</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">solver</span><span class="o">=</span><span class="s1">&#39;liblinear&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">LR</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>#sk-container-id-14 {color: black;background-color: white;}#sk-container-id-14 pre{padding: 0;}#sk-container-id-14 div.sk-toggleable {background-color: white;}#sk-container-id-14 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-14 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-14 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-14 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-14 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-14 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-14 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-14 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-14 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-14 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-14 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-14 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-14 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-14 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-14 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-14 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-14 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-14 div.sk-item {position: relative;z-index: 1;}#sk-container-id-14 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-14 div.sk-item::before, #sk-container-id-14 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-14 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-14 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-14 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-14 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-14 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-14 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-14 div.sk-label-container {text-align: center;}#sk-container-id-14 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-14 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-14" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>LogisticRegression(solver=&#x27;liblinear&#x27;)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-14" type="checkbox" checked><label for="sk-estimator-id-14" class="sk-toggleable__label sk-toggleable__label-arrow">LogisticRegression</label><div class="sk-toggleable__content"><pre>LogisticRegression(solver=&#x27;liblinear&#x27;)</pre></div></div></div></div></div></div></div>
+</div>
+</section>
+<section id="q14-maintenant-utilisez-les-methodes-predict-et-predict-proba-sur-les-donnees-de-test-x-test-et-enregistrez-les-sous-2-tableaux-predictions-et-predict-proba">
+<h3><strong>#### Q14) Maintenant, utilisez les méthodes <code class="docutils literal notranslate"><span class="pre">predict</span></code> et <code class="docutils literal notranslate"><span class="pre">predict_proba</span></code> sur les données de test (<code class="docutils literal notranslate"><span class="pre">x_test</span></code>) et enregistrez-les sous 2 tableaux <code class="docutils literal notranslate"><span class="pre">predictions</span></code> et <code class="docutils literal notranslate"><span class="pre">predict_proba</span></code>.</strong><a class="headerlink" href="#q14-maintenant-utilisez-les-methodes-predict-et-predict-proba-sur-les-donnees-de-test-x-test-et-enregistrez-les-sous-2-tableaux-predictions-et-predict-proba" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predictions</span> <span class="o">=</span> <span class="n">LR</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predict_proba</span> <span class="o">=</span> <span class="n">LR</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
+<span class="n">predict_proba</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Classe_0&#39;</span><span class="p">:</span><span class="n">predict_proba</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;Classe_1&#39;</span><span class="p">:</span><span class="n">predict_proba</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]}</span>
+<span class="n">predict_proba</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">predict_proba</span><span class="p">)</span>
+<span class="n">predict_proba</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-f6ad4245-9aab-46d4-b66e-8594dd9ecf67" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Classe_0</th>
+      <th>Classe_1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.745748</td>
+      <td>0.254252</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.975064</td>
+      <td>0.024936</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.508246</td>
+      <td>0.491754</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.847275</td>
+      <td>0.152725</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.968432</td>
+      <td>0.031568</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>650</th>
+      <td>0.328915</td>
+      <td>0.671085</td>
+    </tr>
+    <tr>
+      <th>651</th>
+      <td>0.613531</td>
+      <td>0.386469</td>
+    </tr>
+    <tr>
+      <th>652</th>
+      <td>0.980149</td>
+      <td>0.019851</td>
+    </tr>
+    <tr>
+      <th>653</th>
+      <td>0.701313</td>
+      <td>0.298687</td>
+    </tr>
+    <tr>
+      <th>654</th>
+      <td>0.223074</td>
+      <td>0.776926</td>
+    </tr>
+  </tbody>
+</table>
+<p>655 rows × 2 columns</p>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-f6ad4245-9aab-46d4-b66e-8594dd9ecf67')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-f6ad4245-9aab-46d4-b66e-8594dd9ecf67 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-f6ad4245-9aab-46d4-b66e-8594dd9ecf67');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-5353237b-be90-4fd6-8cd1-f84de590e939">
+  <button class="colab-df-quickchart" onclick="quickchart('df-5353237b-be90-4fd6-8cd1-f84de590e939')"
+            title="Suggest charts."
+            style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-5353237b-be90-4fd6-8cd1-f84de590e939 button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div></div>
+</div>
+</section>
+<section id="q15-a-l-aide-des-predictions-predict-proba-et-du-dataframe-y-test-calculez-la-valeur-de-chaque-metrique-a-l-aide-de-la-fonction-appropriee">
+<h3><strong>Q15) À l’aide des « prédictions », « predict_proba » et du dataframe « y_test », calculez la valeur de chaque métrique à l’aide de la fonction appropriée.</strong><a class="headerlink" href="#q15-a-l-aide-des-predictions-predict-proba-et-du-dataframe-y-test-calculez-la-valeur-de-chaque-metrique-a-l-aide-de-la-fonction-appropriee" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">LR_Accuracy_Score</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<span class="n">LR_JaccardIndex</span> <span class="o">=</span> <span class="n">jaccard_score</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<span class="n">LR_F1_Score</span> <span class="o">=</span> <span class="n">f1_score</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<span class="n">LR_Log_Loss</span> <span class="o">=</span> <span class="n">log_loss</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">predict_proba</span><span class="p">)</span>
+<span class="n">LR_Log_Loss</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1830859734564809
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="graphique-pour-regression-logistique">
+<h3><strong>Graphique pour régression Logistique</strong><a class="headerlink" href="#graphique-pour-regression-logistique" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="c1"># Obtenez les prédictions de votre modèle (y_pred) et les vraies valeurs (y_true)</span>
+<span class="c1"># Créez une matrice de confusion</span>
+<span class="n">confusion</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">)</span>
+
+<span class="c1"># Affichez la matrice de confusion sous forme de heatmap</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">confusion</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Blues&quot;</span><span class="p">,</span> <span class="n">cbar</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Prédictions&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Vraies Valeurs&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Matrice de Confusion pour le modèle de regression Logistiuque&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/db5bc061ee6e9f0b5be6ab3cbd9e4d6d05373e3f3f6b611c78534bbf9b811ce0.png" src="_images/db5bc061ee6e9f0b5be6ab3cbd9e4d6d05373e3f3f6b611c78534bbf9b811ce0.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="svm">
+<h2><strong>SVM</strong><a class="headerlink" href="#svm" title="Link to this heading">#</a></h2>
+<section id="q16-creez-et-entrainez-un-modele-svm-appele-svm-en-utilisant-les-donnees-d-entrainement-x-train-y-train">
+<h3><strong>Q16) Créez et entraînez un modèle SVM appelé SVM en utilisant les données d’entraînement (<code class="docutils literal notranslate"><span class="pre">x_train</span></code>, <code class="docutils literal notranslate"><span class="pre">y_train</span></code>).</strong><a class="headerlink" href="#q16-creez-et-entrainez-un-modele-svm-appele-svm-en-utilisant-les-donnees-d-entrainement-x-train-y-train" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SVM</span> <span class="o">=</span> <span class="n">svm</span><span class="o">.</span><span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s1">&#39;rbf&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">SVM</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>#sk-container-id-16 {color: black;background-color: white;}#sk-container-id-16 pre{padding: 0;}#sk-container-id-16 div.sk-toggleable {background-color: white;}#sk-container-id-16 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-16 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-16 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-16 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-16 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-16 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-16 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-16 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-16 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-16 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-16 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-16 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-16 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-16 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-16 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-16 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-16 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-16 div.sk-item {position: relative;z-index: 1;}#sk-container-id-16 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-16 div.sk-item::before, #sk-container-id-16 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-16 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-16 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-16 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-16 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-16 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-16 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-16 div.sk-label-container {text-align: center;}#sk-container-id-16 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-16 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-16" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>SVC()</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-16" type="checkbox" checked><label for="sk-estimator-id-16" class="sk-toggleable__label sk-toggleable__label-arrow">SVC</label><div class="sk-toggleable__content"><pre>SVC()</pre></div></div></div></div></div></div></div>
+</div>
+</section>
+<section id="q17-utilisez-maintenant-la-methode-predict-sur-les-donnees-de-test-x-test-et-enregistrez-la-dans-le-tableau-predictions">
+<h3><strong>Q17) Utilisez maintenant la méthode <code class="docutils literal notranslate"><span class="pre">predict</span></code> sur les données de test (<code class="docutils literal notranslate"><span class="pre">x_test</span></code>) et enregistrez-la dans le tableau <code class="docutils literal notranslate"><span class="pre">predictions</span></code>.</strong><a class="headerlink" href="#q17-utilisez-maintenant-la-methode-predict-sur-les-donnees-de-test-x-test-et-enregistrez-la-dans-le-tableau-predictions" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predictions</span> <span class="o">=</span> <span class="n">SVM</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="q18-a-l-aide-des-predictions-et-de-la-trame-de-donnees-y-test-calculez-la-valeur-de-chaque-metrique-a-l-aide-de-la-fonction-appropriee">
+<h3><strong>Q18) À l’aide des « prédictions » et de la trame de données « y_test », calculez la valeur de chaque métrique à l’aide de la fonction appropriée.</strong><a class="headerlink" href="#q18-a-l-aide-des-predictions-et-de-la-trame-de-donnees-y-test-calculez-la-valeur-de-chaque-metrique-a-l-aide-de-la-fonction-appropriee" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SVM_Accuracy_Score</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<span class="n">SVM_JaccardIndex</span> <span class="o">=</span> <span class="n">jaccard_score</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<span class="n">SVM_F1_Score</span> <span class="o">=</span> <span class="n">f1_score</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="c1"># Obtenez les prédictions de votre modèle (y_pred) et les vraies valeurs (y_true)</span>
+<span class="c1"># Créez une matrice de confusion</span>
+<span class="n">confusion</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">)</span>
+
+<span class="c1"># Affichez la matrice de confusion sous forme de heatmap</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">confusion</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Blues&quot;</span><span class="p">,</span> <span class="n">cbar</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Prédictions&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Vraies Valeurs&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Matrice de Confusion pour le modèle SVM&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/9db3fdf8a805093ebcad2ff4be65ac942d3289a2cf032c064487fa27c8a0c4cf.png" src="_images/9db3fdf8a805093ebcad2ff4be65ac942d3289a2cf032c064487fa27c8a0c4cf.png" />
+</div>
+</div>
+<blockquote>
+<div><h3 class="rubric" id="rapport"><strong>Rapport</strong></h3>
+</div></blockquote>
+</section>
+<section id="q19-affichez-la-precision-l-indice-jaccard-le-score-f1-et-la-perte-de-log-dans-un-format-tabulaire-en-utilisant-un-bloc-de-donnees-pour-tous-les-modeles-ci-dessus">
+<h3><strong>Q19) Affichez la précision, l’indice Jaccard, le score F1 et la perte de log dans un format tabulaire en utilisant un bloc de données pour tous les modèles ci-dessus.</strong><a class="headerlink" href="#q19-affichez-la-precision-l-indice-jaccard-le-score-f1-et-la-perte-de-log-dans-un-format-tabulaire-en-utilisant-un-bloc-de-donnees-pour-tous-les-modeles-ci-dessus" title="Link to this heading">#</a></h3>
+<p>*LogLoss concerne uniquement le modèle de régression logistique</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dictt</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Modèle&quot;</span><span class="p">:(</span><span class="s1">&#39;RegressionLineaire&#39;</span><span class="p">,</span><span class="s2">&quot;KNN&quot;</span><span class="p">,</span> <span class="s2">&quot;Tree&quot;</span><span class="p">,</span> <span class="s2">&quot;LR&quot;</span><span class="p">,</span> <span class="s2">&quot;SVM&quot;</span><span class="p">),</span>
+    <span class="s2">&quot;MAE&quot;</span><span class="p">:</span> <span class="n">LinearRegression_MAE</span><span class="p">,</span>
+    <span class="s2">&quot;MSE&quot;</span><span class="p">:</span> <span class="n">LinearRegression_MSE</span><span class="p">,</span>
+    <span class="s2">&quot;R2&quot;</span><span class="p">:</span> <span class="n">LinearRegression_R2</span><span class="p">,</span>
+    <span class="s2">&quot;Accuracy_Score&quot;</span><span class="p">:</span> <span class="p">(</span><span class="n">KNN_Accuracy_Score</span><span class="p">,</span> <span class="n">Tree_Accuracy_Score</span><span class="p">,</span> <span class="n">LR_Accuracy_Score</span><span class="p">,</span> <span class="n">SVM_Accuracy_Score</span><span class="p">),</span>
+    <span class="s2">&quot;JaccardIndex&quot;</span><span class="p">:</span> <span class="p">(</span><span class="n">KNN_JaccardIndex</span><span class="p">,</span> <span class="n">Tree_JaccardIndex</span><span class="p">,</span> <span class="n">LR_JaccardIndex</span><span class="p">,</span> <span class="n">SVM_JaccardIndex</span><span class="p">),</span>
+    <span class="s2">&quot;F1_Score&quot;</span><span class="p">:</span> <span class="p">(</span><span class="n">KNN_F1_Score</span><span class="p">,</span> <span class="n">Tree_F1_Score</span><span class="p">,</span> <span class="n">LR_F1_Score</span><span class="p">,</span> <span class="n">SVM_F1_Score</span><span class="p">),</span>
+    <span class="s2">&quot;Log_Loss&quot;</span><span class="p">:</span> <span class="n">LR_Log_Loss</span>
+<span class="p">}</span>
+
+<span class="n">dictt</span>
+<span class="n">dictt</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dictt</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">dictt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>               Modèle       MAE       MSE        R2  Accuracy_Score  \
+0  RegressionLineaire  0.256309  0.340176  0.427138        0.818321   
+1                 KNN  0.256309  0.340176  0.427138        0.755725   
+2                Tree  0.256309  0.340176  0.427138        0.836641   
+3                  LR  0.256309  0.340176  0.427138        0.722137   
+
+   JaccardIndex  F1_Score  Log_Loss  
+0      0.425121  0.596610  0.183086  
+1      0.400749  0.572193  0.183086  
+2      0.509174  0.674772  0.183086  
+3      0.000000  0.000000  0.183086  
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">met</span> <span class="o">=</span>  <span class="p">{</span>
+
+      <span class="s2">&quot;metricc&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;MAE&quot;</span><span class="p">,</span> <span class="s2">&quot;MSE&quot;</span><span class="p">,</span> <span class="s2">&quot;R2&quot;</span><span class="p">,</span> <span class="s2">&quot;Accuracy_Score&quot;</span><span class="p">,</span> <span class="s2">&quot;JaccardIndex&quot;</span><span class="p">,</span> <span class="s2">&quot; F1_Score&quot;</span><span class="p">,</span> <span class="s2">&quot; Log_Loss&quot;</span><span class="p">),</span>
+     <span class="s2">&quot;Regression_linéaire&quot;</span> <span class="p">:</span> <span class="p">(</span><span class="n">LinearRegression_MAE</span><span class="p">,</span> <span class="n">LinearRegression_MSE</span><span class="p">,</span> <span class="n">LinearRegression_R2</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+      <span class="s2">&quot;KNN&quot;</span> <span class="p">:</span> <span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">KNN_Accuracy_Score</span><span class="p">,</span> <span class="n">KNN_JaccardIndex</span><span class="p">,</span> <span class="n">KNN_F1_Score</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+      <span class="s2">&quot;Tree&quot;</span><span class="p">:(</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">Tree_Accuracy_Score</span><span class="p">,</span> <span class="n">Tree_JaccardIndex</span><span class="p">,</span> <span class="n">Tree_F1_Score</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+      <span class="s2">&quot;LR&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="n">LR_Accuracy_Score</span><span class="p">,</span> <span class="n">LR_JaccardIndex</span><span class="p">,</span> <span class="n">LR_F1_Score</span><span class="p">,</span> <span class="n">LR_Log_Loss</span><span class="p">),</span>
+      <span class="s2">&quot;SVM&quot;</span><span class="p">:(</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="n">SVM_Accuracy_Score</span><span class="p">,</span> <span class="n">SVM_JaccardIndex</span><span class="p">,</span> <span class="n">SVM_F1_Score</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,)</span>
+<span class="p">}</span>
+<span class="n">met</span>
+<span class="n">Report</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">met</span><span class="p">)</span>
+<span class="n">Report</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;metricc&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-04fdb2ef-d26d-404e-b5fb-f3e867e5c023" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Regression_linéaire</th>
+      <th>KNN</th>
+      <th>Tree</th>
+      <th>LR</th>
+      <th>SVM</th>
+    </tr>
+    <tr>
+      <th>metricc</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>MAE</th>
+      <td>0.256309</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>MSE</th>
+      <td>0.340176</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>R2</th>
+      <td>0.427138</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Accuracy_Score</th>
+      <td></td>
+      <td>0.818321</td>
+      <td>0.755725</td>
+      <td>0.836641</td>
+      <td>0.722137</td>
+    </tr>
+    <tr>
+      <th>JaccardIndex</th>
+      <td></td>
+      <td>0.425121</td>
+      <td>0.400749</td>
+      <td>0.509174</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>F1_Score</th>
+      <td></td>
+      <td>0.59661</td>
+      <td>0.572193</td>
+      <td>0.674772</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>Log_Loss</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>0.183086</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-04fdb2ef-d26d-404e-b5fb-f3e867e5c023')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-04fdb2ef-d26d-404e-b5fb-f3e867e5c023 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-04fdb2ef-d26d-404e-b5fb-f3e867e5c023');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-cf2bb5ea-934a-42fe-92f2-efbd542bc1b5">
+  <button class="colab-df-quickchart" onclick="quickchart('df-cf2bb5ea-934a-42fe-92f2-efbd542bc1b5')"
+            title="Suggest charts."
+            style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-cf2bb5ea-934a-42fe-92f2-efbd542bc1b5 button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div></div>
+</div>
+</section>
+</section>
+</section>
+<section id="evaluation">
+<h1><strong>Evaluation</strong><a class="headerlink" href="#evaluation" title="Link to this heading">#</a></h1>
+<section id="descriptions-des-metrics">
+<h2><strong>Descriptions des métrics</strong><a class="headerlink" href="#descriptions-des-metrics" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Accuracy Score (Score de Précision) :</strong></p></li>
+</ul>
+<p>L’accuracy score mesure la proportion des prédictions correctes parmi toutes les prédictions.
+Il est calculé comme le nombre de prédictions correctes divisé par le nombre total d’échantillons dans l’ensemble de données.
+Une valeur élevée d’accuracy score indique que le modèle fait un bon travail pour prédire les classes correctes.</p>
+<ul class="simple">
+<li><p><strong>Jaccard Index :</strong></p></li>
+</ul>
+<p>Le Jaccard Index, également appelé coefficient de Jaccard, mesure la similarité entre deux ensembles en comparant leurs intersections avec leurs unions.
+En classification, le Jaccard Index est souvent utilisé pour évaluer la similarité entre l’ensemble des vrais labels et l’ensemble des labels prédits par le modèle.
+Il est calculé en divisant le nombre d’éléments en commun par le nombre total d’éléments dans les deux ensembles.
+Une valeur plus élevée du Jaccard Index indique une meilleure adéquation entre les vrais labels et les prédictions du modèle.</p>
+<ul class="simple">
+<li><p><strong>F1 Score :</strong></p></li>
+</ul>
+<p>Le F1 Score est une métrique qui prend en compte à la fois la précision (proportion de vrais positifs parmi les prédictions positives) et le rappel (proportion de vrais positifs parmi toutes les instances réellement positives).
+Il est calculé comme 2 fois le produit de la précision et du rappel, divisé par la somme de la précision et du rappel (F1 = 2 * (precision * recall) / (precision + recall)).
+Le F1 Score est particulièrement utile lorsque les classes sont déséquilibrées. Une valeur plus élevée du F1 Score indique un meilleur équilibre entre la précision et le rappel.</p>
+<ul class="simple">
+<li><p><strong>Log Loss (Perte logarithmique) :</strong></p></li>
+</ul>
+<p>Le Log Loss est une métrique utilisée principalement pour les problèmes de classification avec des probabilités de classe prédites.
+Il mesure la performance d’un modèle en évaluant à quel point les probabilités prédites sont proches des vraies probabilités des classes.
+Le Log Loss est souvent utilisé pour évaluer la calibration des probabilités prédites. Une valeur plus faible de Log Loss indique une meilleure calibration.</p>
+<p>En résumé, lors de l’évaluation d’un modèle de classification, il est généralement souhaitable d’avoir un Accuracy Score élevé, un Jaccard Index élevé, un F1 Score élevé et un Log Loss faible.</p>
+<p><strong>En voyant, les valeurs des métrics de précision et les graphiques de des prédictions, c’est la regression Logistique qui prédite bien les données. Ils semble estre le meilleur modèle des 5 modèles construits.</strong></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">🎯 Bienvenue dans l’univers des données par Aimé ADJEGUEDE 🎯</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="VISUALISATION_MATPLOLIB.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><strong>Visualisation des données avec Python en utilisant la bibliothèque, pandas, numpy et Matplotlib</strong></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">A propos de la base des données</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#importation-des-mibrairies-necessaires">Importation des mibrairies nécessaires</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pretraitement-des-donnees">Prétraitement des données</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#donnees-d-entrainement-et-de-test">Données d’entrainement et de test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-regression-lineaire">La régression linéaire</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-utiliser-la-fonction-train-test-split-pour-diviser-le-features-et-y-dataframes-avectest-size-de-0-2-et-le-random-state-egale-a-10"><strong>Q1) Utiliser la fonction <code class="docutils literal notranslate"><span class="pre">train_test_split</span></code> pour diviser le <code class="docutils literal notranslate"><span class="pre">features</span></code> et <code class="docutils literal notranslate"><span class="pre">Y</span></code> dataframes avec<code class="docutils literal notranslate"><span class="pre">test_size</span></code> de <code class="docutils literal notranslate"><span class="pre">0.2</span></code> et le <code class="docutils literal notranslate"><span class="pre">random_state</span></code> égale <strong>à</strong> <code class="docutils literal notranslate"><span class="pre">10</span></code>.</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-creez-et-entrainez-un-modele-de-regression-lineaire-appele-linearreg-a-l-aide-des-donnees-d-entrainement-x-train-y-train"><strong>Q2) Créez et entraînez un modèle de régression linéaire appelé LinearReg à l’aide des données d’entraînement (<code class="docutils literal notranslate"><span class="pre">x_train</span></code>, <code class="docutils literal notranslate"><span class="pre">y_train</span></code>).</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q3-utilisez-maintenant-la-methode-predict-sur-les-donnees-de-test-x-test-et-enregistrez-la-dans-le-tableau-predictions"><strong>Q3) Utilisez maintenant la méthode <code class="docutils literal notranslate"><span class="pre">predict</span></code> sur les données de test (<code class="docutils literal notranslate"><span class="pre">x_test</span></code>) et enregistrez-la dans le tableau <code class="docutils literal notranslate"><span class="pre">predictions</span></code>.</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q4-a-l-aide-des-predictions-et-de-la-trame-de-donnees-y-test-calculez-la-valeur-de-chaque-metrique-a-l-aide-de-la-fonction-appropriee"><strong>Q4) À l’aide des « prédictions » et de la trame de données « y_test », calculez la valeur de chaque métrique à l’aide de la fonction appropriée.</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q5-affichez-le-mae-le-mse-et-le-r2-dans-un-format-tabulaire-en-utilisant-le-bloc-de-donnees-pour-le-modele-lineaire"><strong>Q5) Affichez le MAE, le MSE et le R2 dans un format tabulaire en utilisant le bloc de données pour le modèle linéaire.</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphique-du-modele-de-regression-lineaire"><strong>Graphique du modèle de regression linéaire</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q6-creez-et-entrainez-un-modele-knn-appele-knn-en-utilisant-les-donnees-d-entrainement-x-train-y-train-avec-le-parametre-n-neighbors-defini-sur-4"><strong>Q6) Créez et entraînez un modèle KNN appelé KNN en utilisant les données d’entraînement (<code class="docutils literal notranslate"><span class="pre">x_train</span></code>, <code class="docutils literal notranslate"><span class="pre">y_train</span></code>) avec le paramètre <code class="docutils literal notranslate"><span class="pre">n_neighbors</span></code> défini sur <code class="docutils literal notranslate"><span class="pre">4</span></code>.</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q7-utilisez-maintenant-la-methode-predict-sur-les-donnees-de-test-x-test-et-enregistrez-la-dans-le-tableau-predictions"><strong>Q7) Utilisez maintenant la méthode <code class="docutils literal notranslate"><span class="pre">predict</span></code> sur les données de test (<code class="docutils literal notranslate"><span class="pre">x_test</span></code>) et enregistrez-la dans le tableau <code class="docutils literal notranslate"><span class="pre">predictions</span></code>.</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q8-a-l-aide-des-predictions-et-de-la-trame-de-donnees-y-test-calculez-la-valeur-de-chaque-metrique-a-l-aide-de-la-fonction-appropriee"><strong>Q8) À l’aide des « prédictions » et de la trame de données « y_test », calculez la valeur de chaque métrique à l’aide de la fonction appropriée.</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphique-pour-le-modele-knn"><strong>Graphique pour le modèle KNN</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree"><strong>Decision Tree</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q9-creez-et-entrainez-un-modele-d-arbre-de-decision-appele-tree-en-utilisant-les-donnees-d-entrainement-x-train-y-train"><strong>Q9) Créez et entraînez un modèle d’arbre de décision appelé Tree en utilisant les données d’entraînement (<code class="docutils literal notranslate"><span class="pre">x_train</span></code>, <code class="docutils literal notranslate"><span class="pre">y_train</span></code>).</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q10-utilisez-maintenant-la-methode-predict-sur-les-donnees-de-test-x-test-et-enregistrez-la-dans-le-tableau-predictions"><strong>Q10) Utilisez maintenant la méthode <code class="docutils literal notranslate"><span class="pre">predict</span></code> sur les données de test (<code class="docutils literal notranslate"><span class="pre">x_test</span></code>) et enregistrez-la dans le tableau <code class="docutils literal notranslate"><span class="pre">predictions</span></code>.</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q11-a-l-aide-des-predictions-et-de-la-trame-de-donnees-y-test-calculez-la-valeur-de-chaque-metrique-a-l-aide-de-la-fonction-appropriee"><strong>Q11) À l’aide des « prédictions » et de la trame de données « y_test », calculez la valeur de chaque métrique à l’aide de la fonction appropriée.</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-representation-graphique"><strong>La représentation graphique</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logistic-regression"><strong>Logistic Regression</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q12-utilisez-la-fonction-train-test-split-pour-diviser-les-dataframes-features-et-y-avec-un-test-size-de-0-2-et-le-random-state-defini-sur-1"><strong>Q12) Utilisez la fonction <code class="docutils literal notranslate"><span class="pre">train_test_split</span></code> pour diviser les dataframes <code class="docutils literal notranslate"><span class="pre">features</span></code> et <code class="docutils literal notranslate"><span class="pre">Y</span></code> avec un <code class="docutils literal notranslate"><span class="pre">test_size</span></code> de <code class="docutils literal notranslate"><span class="pre">0.2</span></code> et le <code class="docutils literal notranslate"><span class="pre">random_state</span></code> défini sur <code class="docutils literal notranslate"><span class="pre">1</span></code>.</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q13-creez-et-entrainez-un-modele-logisticregression-appele-lr-en-utilisant-les-donnees-d-entrainement-x-train-y-train-avec-le-parametre-solver-defini-sur-liblinear"><strong>Q13) Créez et entraînez un modèle LogisticRegression appelé LR en utilisant les données d’entraînement (<code class="docutils literal notranslate"><span class="pre">x_train</span></code>, <code class="docutils literal notranslate"><span class="pre">y_train</span></code>) avec le paramètre <code class="docutils literal notranslate"><span class="pre">solver</span></code> défini sur <code class="docutils literal notranslate"><span class="pre">liblinear</span></code>.</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q14-maintenant-utilisez-les-methodes-predict-et-predict-proba-sur-les-donnees-de-test-x-test-et-enregistrez-les-sous-2-tableaux-predictions-et-predict-proba"><strong>#### Q14) Maintenant, utilisez les méthodes <code class="docutils literal notranslate"><span class="pre">predict</span></code> et <code class="docutils literal notranslate"><span class="pre">predict_proba</span></code> sur les données de test (<code class="docutils literal notranslate"><span class="pre">x_test</span></code>) et enregistrez-les sous 2 tableaux <code class="docutils literal notranslate"><span class="pre">predictions</span></code> et <code class="docutils literal notranslate"><span class="pre">predict_proba</span></code>.</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q15-a-l-aide-des-predictions-predict-proba-et-du-dataframe-y-test-calculez-la-valeur-de-chaque-metrique-a-l-aide-de-la-fonction-appropriee"><strong>Q15) À l’aide des « prédictions », « predict_proba » et du dataframe « y_test », calculez la valeur de chaque métrique à l’aide de la fonction appropriée.</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphique-pour-regression-logistique"><strong>Graphique pour régression Logistique</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#svm"><strong>SVM</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q16-creez-et-entrainez-un-modele-svm-appele-svm-en-utilisant-les-donnees-d-entrainement-x-train-y-train"><strong>Q16) Créez et entraînez un modèle SVM appelé SVM en utilisant les données d’entraînement (<code class="docutils literal notranslate"><span class="pre">x_train</span></code>, <code class="docutils literal notranslate"><span class="pre">y_train</span></code>).</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q17-utilisez-maintenant-la-methode-predict-sur-les-donnees-de-test-x-test-et-enregistrez-la-dans-le-tableau-predictions"><strong>Q17) Utilisez maintenant la méthode <code class="docutils literal notranslate"><span class="pre">predict</span></code> sur les données de test (<code class="docutils literal notranslate"><span class="pre">x_test</span></code>) et enregistrez-la dans le tableau <code class="docutils literal notranslate"><span class="pre">predictions</span></code>.</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q18-a-l-aide-des-predictions-et-de-la-trame-de-donnees-y-test-calculez-la-valeur-de-chaque-metrique-a-l-aide-de-la-fonction-appropriee"><strong>Q18) À l’aide des « prédictions » et de la trame de données « y_test », calculez la valeur de chaque métrique à l’aide de la fonction appropriée.</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q19-affichez-la-precision-l-indice-jaccard-le-score-f1-et-la-perte-de-log-dans-un-format-tabulaire-en-utilisant-un-bloc-de-donnees-pour-tous-les-modeles-ci-dessus"><strong>Q19) Affichez la précision, l’indice Jaccard, le score F1 et la perte de log dans un format tabulaire en utilisant un bloc de données pour tous les modèles ci-dessus.</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation"><strong>Evaluation</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions-des-metrics"><strong>Descriptions des métrics</strong></a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+Traceback (most recent call last):
+  File "C:\Users\adjeg\AppData\Roaming\Python\Python310\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "C:\Python\Python310\lib\site-packages\nbclient\client.py", line 1269, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "C:\Python\Python310\lib\site-packages\nbclient\util.py", line 85, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "C:\Python\Python310\lib\site-packages\nbclient\util.py", line 60, in just_run
+    return loop.run_until_complete(coro)
+  File "C:\Python\Python310\lib\asyncio\base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "C:\Python\Python310\lib\site-packages\nbclient\client.py", line 707, in async_execute
+    await self.async_execute_cell(
+  File "C:\Python\Python310\lib\site-packages\nbclient\client.py", line 1025, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Python\Python310\lib\site-packages\nbclient\client.py", line 919, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+df[["age", "poids"]].plot(kind = 'kde')
+------------------
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [1;32mIn [13], line 1[0m
+[1;32m----> 1[0m [43mdf[49m[43m[[49m[43m[[49m[38;5;124;43m"[39;49m[38;5;124;43mage[39;49m[38;5;124;43m"[39;49m[43m,[49m[43m [49m[38;5;124;43m"[39;49m[38;5;124;43mpoids[39;49m[38;5;124;43m"[39;49m[43m][49m[43m][49m[38;5;241;43m.[39;49m[43mplot[49m[43m([49m[43mkind[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[38;5;124;43m'[39;49m[38;5;124;43mkde[39;49m[38;5;124;43m'[39;49m[43m)[49m
+
+File [1;32mC:\Python\Python310\lib\site-packages\pandas\plotting\_core.py:1030[0m, in [0;36mPlotAccessor.__call__[1;34m(self, *args, **kwargs)[0m
+[0;32m   1027[0m             label_name [38;5;241m=[39m label_kw [38;5;129;01mor[39;00m data[38;5;241m.[39mcolumns
+[0;32m   1028[0m             data[38;5;241m.[39mcolumns [38;5;241m=[39m label_name
+[1;32m-> 1030[0m [38;5;28;01mreturn[39;00m plot_backend[38;5;241m.[39mplot(data, kind[38;5;241m=[39mkind, [38;5;241m*[39m[38;5;241m*[39mkwargs)
+
+File [1;32mC:\Python\Python310\lib\site-packages\pandas\plotting\_matplotlib\__init__.py:71[0m, in [0;36mplot[1;34m(data, kind, **kwargs)[0m
+[0;32m     69[0m         kwargs[[38;5;124m"[39m[38;5;124max[39m[38;5;124m"[39m] [38;5;241m=[39m [38;5;28mgetattr[39m(ax, [38;5;124m"[39m[38;5;124mleft_ax[39m[38;5;124m"[39m, ax)
+[0;32m     70[0m plot_obj [38;5;241m=[39m PLOT_CLASSES[kind](data, [38;5;241m*[39m[38;5;241m*[39mkwargs)
+[1;32m---> 71[0m [43mplot_obj[49m[38;5;241;43m.[39;49m[43mgenerate[49m[43m([49m[43m)[49m
+[0;32m     72[0m plot_obj[38;5;241m.[39mdraw()
+[0;32m     73[0m [38;5;28;01mreturn[39;00m plot_obj[38;5;241m.[39mresult
+
+File [1;32mC:\Python\Python310\lib\site-packages\pandas\plotting\_matplotlib\core.py:501[0m, in [0;36mMPLPlot.generate[1;34m(self)[0m
+[0;32m    499[0m [38;5;28mself[39m[38;5;241m.[39m_compute_plot_data()
+[0;32m    500[0m fig [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mfig
+[1;32m--> 501[0m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_make_plot[49m[43m([49m[43mfig[49m[43m)[49m
+[0;32m    502[0m [38;5;28mself[39m[38;5;241m.[39m_add_table()
+[0;32m    503[0m [38;5;28mself[39m[38;5;241m.[39m_make_legend()
+
+File [1;32mC:\Python\Python310\lib\site-packages\pandas\plotting\_matplotlib\hist.py:168[0m, in [0;36mHistPlot._make_plot[1;34m(self, fig)[0m
+[0;32m    164[0m     kwds[[38;5;124m"[39m[38;5;124mweights[39m[38;5;124m"[39m] [38;5;241m=[39m [38;5;28mtype[39m([38;5;28mself[39m)[38;5;241m.[39m_get_column_weights([38;5;28mself[39m[38;5;241m.[39mweights, i, y)
+[0;32m    166[0m y [38;5;241m=[39m reformat_hist_y_given_by(y, [38;5;28mself[39m[38;5;241m.[39mby)
+[1;32m--> 168[0m artists [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_plot(ax, y, column_num[38;5;241m=[39mi, stacking_id[38;5;241m=[39mstacking_id, [38;5;241m*[39m[38;5;241m*[39mkwds)
+[0;32m    170[0m [38;5;66;03m# when by is applied, show title for subplots to know which group it is[39;00m
+[0;32m    171[0m [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39mby [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+
+File [1;32mC:\Python\Python310\lib\site-packages\pandas\plotting\_matplotlib\hist.py:276[0m, in [0;36mKdePlot._plot[1;34m(cls, ax, y, style, bw_method, ind, column_num, stacking_id, **kwds)[0m
+[0;32m    263[0m [38;5;129m@classmethod[39m
+[0;32m    264[0m [38;5;66;03m# error: Signature of "_plot" incompatible with supertype "MPLPlot"[39;00m
+[0;32m    265[0m [38;5;28;01mdef[39;00m [38;5;21m_plot[39m(  [38;5;66;03m#  type: ignore[override][39;00m
+[1;32m   (...)[0m
+[0;32m    274[0m     [38;5;241m*[39m[38;5;241m*[39mkwds,
+[0;32m    275[0m ):
+[1;32m--> 276[0m     [38;5;28;01mfrom[39;00m [38;5;21;01mscipy[39;00m[38;5;21;01m.[39;00m[38;5;21;01mstats[39;00m [38;5;28;01mimport[39;00m gaussian_kde
+[0;32m    278[0m     y [38;5;241m=[39m remove_na_arraylike(y)
+[0;32m    279[0m     gkde [38;5;241m=[39m gaussian_kde(y, bw_method[38;5;241m=[39mbw_method)
+
+[1;31mModuleNotFoundError[0m: No module named 'scipy'
+ModuleNotFoundError: No module named 'scipy'
+
