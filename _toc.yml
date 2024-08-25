@@ -1,0 +1,12 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: Projet_prediction_pluie
+- file: VISUALISATION_MATPLOLIB
+- file: WEB_SCRAPING_API_PYTHON
+- file: markdown
+- file: notebooks
+- file: markdown-notebooks
